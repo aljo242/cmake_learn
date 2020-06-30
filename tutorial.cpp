@@ -5,6 +5,10 @@
 
 #include "TutorialConfig.h"
 
+#ifdef USE_MYMATH
+#include "MathFunctions.h"
+#endif
+
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
@@ -15,12 +19,17 @@ int main(int argc, char* argv[])
 		std::cout << "Usage: " << argv[0] << " number\n";
 		return 1;
 	}
-
-	// convert input to double
 	const double inputValue {std::stod(argv[1])};
 
+	// convert input to double
+	#ifdef USE_MYMATH
+		const double outputValue {mysqrt(inputValue)};
+	#else
+		const double outputValue {std::sqrt(inputValue)};
+	#endif
+
 	// calc square root
-	const double outputValue {std::sqrt(inputValue)};
+	
 	std::cout << "Square root of " << inputValue << " is: " << outputValue << "\n";
 
 	return 0;
