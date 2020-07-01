@@ -1,7 +1,11 @@
 // a simple program that builds a sqrt table
-#include <iostream>
-#include <fstream>
 #include <cmath>
+#include <fstream>
+#include <iostream>
+
+#include "mysqrt.h"
+
+using namespace sqrt_math_constants;
 
 int main(int argc, char* argv[])
 {
@@ -17,7 +21,7 @@ int main(int argc, char* argv[])
 	if (fileOpen)
 	{
 		fout << "double sqrtTable[] = {\n";
-		for (int i = 0; i < 10; ++i)
+		for (int i = 0; i < numVals; ++i)
 		{
 			fout << std::sqrt(static_cast<double>(i)) << ",\n";
 		}
