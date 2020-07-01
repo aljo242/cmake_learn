@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include "MathFunctions.h"
+#include "Table.h" // generated table
+
 // hacky sqrt
 double mysqrt(const double x)
 {
@@ -8,7 +11,15 @@ double mysqrt(const double x)
 		return 0.0;
 	}
 
+	// use table to find init value
 	double result {x};
+	if (x >= 1.0 && x < 10.0)
+	{
+		std::cout << "Use the table to help find an initial value\n";
+		result = sqrtTable[static_cast<int>(x)];
+	}
+
+
 
 	// perform 10 iters
 	for (int i = 0; i < 10; ++i)

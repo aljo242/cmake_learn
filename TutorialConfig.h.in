@@ -2,4 +2,5 @@
 #define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
 
+// choose to use our custom math lib
 #cmakedefine USE_MYMATH
